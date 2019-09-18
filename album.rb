@@ -27,4 +27,12 @@ attr_reader :id
     return albums.map { |album| Album.new(album) }
   end
 
+  def artist
+    sql = 'SELECT * FROM albums WHERE id = $1'
+    values = [@artist_id]
+    hashes_array = SqlRunner.run(sql, values)
+    # album_hash = hashes_array[0]
+    return Album.new(hashes_array[0])
+  end
+
 end

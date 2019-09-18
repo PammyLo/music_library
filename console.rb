@@ -13,6 +13,9 @@ blue_moon = Album.new(album_1)
 
 blue_moon.save
 
-p Album.all
-p Artist.all
+# p Album.all
+# p Artist.all
+p tom_jones.all_albums
+p blue_moon.artist
 # binding.pry
+# p Album.list_albums(tom_jones.id)
